@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    
+    <!-- Icon -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  </head>
+
+  <body class="bg-gradient-to-t from-neutral-900 to-neutral-950 h-screen">
+    <header class="bg-neutral-950 border-b border-zinc-500">
+      <nav class="flex justify-between items-center w-[92%] mx-auto mt-5">
+        <div>
+          <img
+            class="w-28 h-28"
+            src="img/ej_logo-removebg-preview-removebg-preview.png"
+            alt="logo"
+          />
+        </div>
+
+        <div class="nav-links duration-150 md:static absolute bg-neutral-950 z-50 md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto w-full flex items-center px-5">
+          <ul
+            class="font-[Bungee] flex md:flex-row flex-col md:item-center md:gap-[4vw] gap-10"
+          >
+            <li>
+              <a class="hover:text-zinc-500 text-neutral-300 text-5xl" href="index.html">PASSION</a>
+            </li>
+            <li>
+              <a class="hover:text-zinc-500 text-neutral-300 text-5xl" href="music.html">MUSIC</a>
+            </li>
+            <li>
+              <a class="hover:text-zinc-500 text-neutral-300 text-5xl" href="goals.html">GOALS</a>
+            </li>
+            <li>
+              <a class="hover:text-zinc-500 text-neutral-300 text-5xl [&.active]:text-zinc-500" href="places.html">PlACES</a>
+            </li>
+          </ul>
+        </div>
+        <div class="flex items-center gap-6 relative z-[60]">
+            <ion-icon onclick="onToggleMenu(this)" name="menu" class="text-neutral-300 text-5xl cursor-pointer md:hidden"></ion-icon>
+        </div>
+    </header>
+
+    <script>
+        const navLinks = document.querySelector('.nav-links');
+        function onToggleMenu(e){
+            e.name = e.name === 'menu' ? 'close' : 'menu';
+            navLinks.classList.toggle('top-[1%]');
+        }
+        // Mark current page link as active
+        const currentPage = location.pathname.split('/').pop() || 'index.html';
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+
+    <div class="font-[Bangers]">
+      <h1 class="text-8xl text-neutral-300 text-center mt-10">
+        DREAM PLACES 
+      </h1>
+      <h1 class="text-2xl text-slate-400 text-center mt-5">
+        A place that I really dream to visit someday
+      </h1>
+    </div>
+
+    <!-- Layout Content starts here -->
+    <div class="w-[92%] mx-auto mt-16 mb-20 font-sans">
+      <!-- Badge -->
+      <div class="mb-4">
+        <span class="inline-flex items-center gap-2 border border-white text-white text-xs font-semibold px-4 py-1.5 rounded-full bg-transparent uppercase tracking-widest">
+          <ion-icon name="location-outline" class="text-lg"></ion-icon>
+          DREAM PLACES
+        </span>
+      </div>
+
+      <!-- Image Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Card 1 -->
+        <div class="relative rounded-2xl overflow-hidden h-80 group shadow-lg">
+          <div class="absolute inset-0 bg-zinc-800">
+            <img src="img/Namsan-Tower-during-autumn-in-Seoul-South-Korea-1244x700.jpg" alt="Seoul Korea" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-900/40 to-transparent"></div>
+          <div class="absolute bottom-6 left-6 right-6">
+            <h3 class="text-2xl text-neutral-200 font-serif italic mb-1 z-10 relative">Seoul Korea</h3>
+ 
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="relative rounded-2xl overflow-hidden h-80 group shadow-lg">
+          <div class="absolute inset-0 bg-zinc-800">
+            <img src="img/tokyo.jpg" alt="Tokyo Japan" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-900/40 to-transparent"></div>
+          <div class="absolute bottom-6 left-6 right-6">
+            <h3 class="text-2xl text-neutral-200 font-serif italic mb-1 z-10 relative">Tokyo Japan</h3>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="relative rounded-2xl overflow-hidden h-80 group shadow-lg">
+          <div class="absolute inset-0 bg-zinc-800">
+            <img src="img/switz-lead-image.jpg" alt="Switzerland Europe" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-900/40 to-transparent"></div>
+          <div class="absolute bottom-6 left-6 right-6">
+            <h3 class="text-2xl text-neutral-200 font-serif italic mb-1 z-10 relative">Switzerland Europe</h3>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="relative rounded-2xl overflow-hidden h-80 group shadow-lg">
+          <div class="absolute inset-0 bg-zinc-800">
+            <img src="img/the-ultimate-amsterdam-travel-guide-by-the-airbaltic-blog.jpg" alt="Amsterdam Netherlands" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-900/40 to-transparent"></div>
+          <div class="absolute bottom-6 left-6 right-6">
+            <h3 class="text-2xl text-neutral-200 font-serif italic mb-1 z-10 relative">Amsterdam Netherlands</h3>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <footer class="border-t border-zinc-500 py-10 mt-auto text-center">
+        <p class="text-xs text-white/40 uppercase tracking-widest font-bold">&copy; 2026 EJ. Beware of the dogs.</p>
+    </footer>
+  </body>
+</html>
